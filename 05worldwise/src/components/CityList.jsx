@@ -1,11 +1,14 @@
+import { useCitiesContext } from "../contexts/CitiesContext";
 import CityItem from "./CityItem";
 import styles from "./CityList.module.css";
 import Message from "./Message";
 
-function CityList({ cities }) {
+function CityList() {
+  const { cities } = useCitiesContext();
+
   if (!cities.length)
     return (
-      <Message message="Add your first ciity by clicking a city on the map" />
+      <Message message="Add your first city by clicking a city on the map" />
     );
 
   return (
